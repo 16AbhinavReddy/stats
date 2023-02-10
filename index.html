@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://edsu.github.io/multiverse/multiverse.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <center>
+            <canvas class="orb-canvas"></canvas>
+                <!-- Overlay -->
+                <div class="overlay">
+                <!-- Overlay inner wrapper -->
+                <div class="overlay__inner">
+                    <!-- Title -->
+                    <h1 class="overlay__title">
+                    Statistics for Least Language Used
+                    </h1>
+                    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                    
+                    
+                </div>
+                </div>
+        </center>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script>
+            window.onload = function() {
+            
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Languages used"
+                },
+                data: [{
+                    type: "pie",
+                    startAngle: 240,
+                    yValueFormatString: "##0.00\"%\"",
+                    indexLabel: "{label} {y}",
+                    dataPoints: [
+                        {y: 20, label: "C"},
+                        {y: 30, label: "C++"},
+                        {y: 40, label: "Python"},
+                        {y: 10, label: "Java"},
+                        
+                    ]
+                }]
+            });
+            chart.render();
+            
+            }
+            </script>
+
+    </body>
+</html>
